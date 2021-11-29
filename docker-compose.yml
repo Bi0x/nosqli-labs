@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  phpapp:
+    build: phpapp
+    ports:
+      - "22080:80"
+    links:
+      - db_mongo
+  nodeapp:
+    build: nodeapp
+    ports:
+      - "22081:8080"
+    links:
+      - db_mongo
+  db_mongo:
+    build: mongo
+    ports:
+      - "27017:27017"
