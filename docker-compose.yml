@@ -5,14 +5,19 @@ services:
     ports:
       - "22080:80"
     links:
-      - db_mongo
+      - db_mongo_old
+      - db_mongo_new
   nodeapp:
     build: nodeapp
     ports:
-      - "22081:8080"
+      - "22081:8079"
     links:
-      - db_mongo
-  db_mongo:
-    build: mongo
+      - db_mongo_new
+  db_mongo_old:
+    build: mongo_old
+    ports:
+      - "27018:27017"
+  db_mongo_new:
+    build: mongo_new
     ports:
       - "27017:27017"

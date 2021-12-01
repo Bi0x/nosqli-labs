@@ -1,6 +1,5 @@
 <?php
-error_reporting(0);
-$manager=new MongoDB\Driver\Manager("mongodb://db_mongo:27017");
+$manager=new MongoDB\Driver\Manager("mongodb://db_mongo_old:27017");
 $name = $_GET['name'];
 $passwd = $_GET['passwd'];
 
@@ -18,6 +17,8 @@ try {
 }
 
 $result = $cursor->toArray()[0]->retval;
+print_r($result);
+echo "<br />";
 
 $count=count($result);
 if($count > 0)

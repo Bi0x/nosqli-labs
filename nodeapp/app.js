@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://db_mongo:27017/nosqli');
+mongoose.connect('mongodb://db_mongo_new:27017/nosqli');
 
 app.get('/', function (req, res) {
     res.send('please go /login to login');
@@ -30,6 +30,6 @@ app.post('/login', function (req, res) {
     })
 });
 
-app.listen(8080, function () {
-    console.log('NodeJS MongoDB Injection Demo Run on 8080');
+app.listen(8079, function () {
+    console.log('NodeJS MongoDB Injection Demo Run on 8079');
 });

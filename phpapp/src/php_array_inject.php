@@ -1,6 +1,5 @@
 <?php
-error_reporting(0);
-$manager=new MongoDB\Driver\Manager("mongodb://db_mongo:27017");
+$manager=new MongoDB\Driver\Manager("mongodb://db_mongo_new:27017");
 $name = $_GET['name'];
 $passwd = $_GET['passwd'];
 
